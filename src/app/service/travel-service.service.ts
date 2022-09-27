@@ -21,4 +21,17 @@ export class TravelServiceService {
       })
       .subscribe((data) => console.log(data));
   }
+  getUserLoginInput(): Observable<Account> {
+    return this.http.get<Account>(
+      'api endpoint for getting user login credentials to compare'
+    );
+  }
+  postUserLoginInput(usernameInput: String, passwordInput: String): void {
+    this.http
+      .post<String>('API endpoint for posting user login credentials', {
+        username: usernameInput,
+        password: passwordInput,
+      })
+      .subscribe((data) => console.log(data));
+  }
 }
