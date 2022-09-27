@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Account } from 'src/app/model/Account';
 import { TravelServiceService } from 'src/app/service/travel-service.service';
 
@@ -10,12 +10,19 @@ import { TravelServiceService } from 'src/app/service/travel-service.service';
 export class LoginComponent implements OnInit {
   userLogins: Account = { username: '', password: '' };
   adminLogins: Account = { username: '', password: '' };
+  @Input()
   adminUsername: String = '';
+  @Input()
   adminPassword: String = '';
+  @Input()
   userUsername: String = '';
+  @Input()
+  userPassword: String = '';
   constructor(private tservice: TravelServiceService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  addUsers(): void {} // for registering new users
+  submitAdmin(): void {
     this.tservice.getAdminLoginInput().subscribe((data) => {
       this.adminLogins = data;
     });
@@ -26,5 +33,15 @@ export class LoginComponent implements OnInit {
       this.tservice.postAdminLoginInput(this.adminUsername, this.adminPassword);
     }
   }
-  add(): void {}
+  submitUser(): void {
+    this.tservice.getUserLoginInput().subscribe((data) => {
+      this.userLogins = data;
+    });
+    if (
+      this.userLogins.username == this.userUsername &&
+      this.userLogins.password == this.userPassword
+    ) {
+      this.tservice.postUserLoginInput(this.userUsername, this.userPassword);
+    }
+  }
 }
