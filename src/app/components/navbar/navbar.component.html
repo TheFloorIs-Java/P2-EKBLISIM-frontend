@@ -10,10 +10,12 @@
       <a routerLink="" class="navbar-brand">Our nav bar</a>
     </li>
     <li class="nav-item">
-      <button (click)="collapseOnClick()">Login</button>
+      <a href="#" (click)="collapseOnClick()" class="navbar-brand">Login</a>
       <!-- <a href="#" class="navbar-brand" data-toggle="dropdown">Login</a> -->
-      <div class="dropdown-menu" *ngIf="collapse">
-        <a routerLink="login" class="navbar-brand dropdown-item">As Admin</a>
+      <div *ngIf="collapse">
+        <a routerLink="login">As Admin</a>
+        <br />
+        <a routerLink="login">As User</a>
       </div>
     </li>
   </ul>

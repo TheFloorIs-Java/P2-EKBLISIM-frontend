@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './pages/register/register.component';
 import { PackageComponent } from './components/package/package.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegisterComponent,
     PackageComponent,
+    AdminloginComponent,
   ],
   imports: [
     BrowserModule,
