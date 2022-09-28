@@ -6,5 +6,6 @@
   <label for="logPassword">Password:</label>
   <input id="logPassword" type="password" [(ngModel)]="userPassword" />
 </div>
-<button (click)="submitUser()" routerLink="URI">Submit</button>
+<button (click)="submitUser()" routerLink="packages">Submit</button>
+<p *ngIf="loginType">Wrong username or password! Try Again.</p>
 <!-- This links to the page where the user views the package dashboard and adds to his cart -->

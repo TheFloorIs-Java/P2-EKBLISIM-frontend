@@ -23,15 +23,18 @@ export class TravelServiceService {
   }
   getUserLoginInput(): Observable<Account> {
     return this.http.get<Account>(
-      'api endpoint for getting user login credentials to compare'
+      'https://632d094f519d17fb53b70ec4.mockapi.io/UserLogin/v1/logins'
     );
   }
   postUserLoginInput(usernameInput: String, passwordInput: String): void {
     this.http
-      .post<String>('API endpoint for posting user login credentials', {
-        username: usernameInput,
-        password: passwordInput,
-      })
+      .post<String>(
+        'https://632d094f519d17fb53b70ec4.mockapi.io/UserLogin/v1/logins',
+        {
+          username: usernameInput,
+          password: passwordInput,
+        }
+      )
       .subscribe((data) => console.log(data));
   }
 }
