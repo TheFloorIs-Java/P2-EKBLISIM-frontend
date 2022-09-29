@@ -1,9 +1,11 @@
 <div>
-    <label for="username">Username:</label>
-    <input id="username" type="text" />
+  <label for="username">Username:</label>
+  <input id="username" type="text" [(ngModel)]="userUsername" />
 </div>
 <div>
-    <label for="logPassword">Password:</label>
-    <input id="logPassword" type="password"/>
+  <label for="logPassword">Password:</label>
+  <input id="logPassword" type="password" [(ngModel)]="userPassword" />
 </div>
-<button>Submit</button>
+<button (click)="submitUser()" routerLink="packages">Submit</button>
+<p *ngIf="loginType">Wrong username or password! Try Again.</p>
+<!-- This links to the page where the user views the package dashboard and adds to his cart -->
