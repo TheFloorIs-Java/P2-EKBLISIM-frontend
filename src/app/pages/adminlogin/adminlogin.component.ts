@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
 import { Account } from 'src/app/model/Account';
 import { TravelServiceService } from 'src/app/service/travel-service.service';
 
@@ -13,18 +14,19 @@ export class AdminloginComponent implements OnInit {
   adminUsername: String = '';
   @Input()
   adminPassword: String = '';
-  constructor(private tservice: TravelServiceService) {}
+  loginType: boolean = false;
+  constructor(private tservice: TravelServiceService,
+              private authService: AuthService) {}
 
   ngOnInit(): void {}
   submitAdmin(): void {
+    this.loginType = false;
     this.tservice.getAdminLoginInput().subscribe((data) => {
       this.adminLogins = data;
     });
-    if (
-      this.adminLogins.username === this.adminUsername &&
-      this.adminLogins.password === this.adminPassword
-    ) {
+    if (this.authService.loginAuthenticated(this.adminLogins.username,
+      this.adminUsername, this.adminLogins.password, this.adminPassword)) {
       this.tservice.postAdminLoginInput(this.adminUsername, this.adminPassword);
-    }
+    } else this.loginType = true;
   }
 }
