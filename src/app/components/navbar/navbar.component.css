@@ -5,3 +5,8 @@ li {
     float: left;
     margin: 25px;
 } */
+
+.dropdown {
+    font-size: 12px;
+    padding-left: 25px;
+}
