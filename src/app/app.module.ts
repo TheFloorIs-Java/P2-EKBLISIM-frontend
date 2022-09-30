@@ -13,6 +13,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { PackageComponent } from './components/package/package.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
+import { AdminModule } from './admin/admin.module';
+import { AuthGuard } from './auth/auth.guard';
+import { TravelServiceService } from './service/travel-service.service';
 
 @NgModule({
   declarations: [
@@ -31,8 +34,9 @@ import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    AdminModule
   ],
-  providers: [],
+  providers: [AuthGuard, TravelServiceService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

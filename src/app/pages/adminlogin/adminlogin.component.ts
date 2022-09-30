@@ -21,8 +21,8 @@ export class AdminloginComponent implements OnInit {
       this.adminLogins = data;
     });
     if (
-      this.adminLogins.username == this.adminUsername &&
-      this.adminLogins.password == this.adminPassword
+      this.adminLogins.username === this.adminUsername &&
+      this.adminLogins.password === this.adminPassword
     ) {
       this.tservice.postAdminLoginInput(this.adminUsername, this.adminPassword);
     }

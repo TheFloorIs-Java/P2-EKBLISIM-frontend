@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
 import { Account } from 'src/app/model/Account';
 import { TravelServiceService } from 'src/app/service/travel-service.service';
 
@@ -14,7 +15,9 @@ export class LoginComponent implements OnInit {
   @Input()
   userPassword: String = '';
   loginType: boolean = false;
-  constructor(private tservice: TravelServiceService) {}
+
+  constructor(private tservice: TravelServiceService,
+              private authService: AuthService) {}
 
   ngOnInit(): void {}
   addUsers(): void {} // for registering new users
@@ -24,10 +27,9 @@ export class LoginComponent implements OnInit {
     this.tservice.getUserLoginInput().subscribe((data) => {
       this.userLogins = data;
     });
-    if (
-      this.userLogins.username === this.userUsername &&
-      this.userLogins.password === this.userPassword
-    ) {
+    if (this.authService.loginAuthenticated(this.userLogins.username,
+      this.userUsername, this.userLogins.password, this.userPassword))
+    {
       this.tservice.postUserLoginInput(this.userUsername, this.userPassword);
     } else {
       this.loginType = true;

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminPortalComponent } from './admin-portal/admin-portal.component';
 import { AdminComponent } from './admin/admin.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { ManagePackagesComponent } from './manage-packages/manage-packages.component';
@@ -10,10 +10,10 @@ import { ManagePackagesComponent } from './manage-packages/manage-packages.compo
 
 @NgModule({
   declarations: [
-    AdminDashboardComponent,
     AdminComponent,
     ManageUsersComponent,
-    ManagePackagesComponent
+    ManagePackagesComponent,
+    AdminPortalComponent
   ],
   imports: [
     CommonModule,
