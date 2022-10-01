@@ -16,6 +16,11 @@ import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
 import { AdminModule } from './admin/admin.module';
 import { AuthGuard } from './auth/auth.guard';
 import { TravelServiceService } from './service/travel-service.service';
+import { PackageCardComponent } from './components/package-card/package-card.component';
+import { AddToCartButtonComponent } from './components/add-to-cart-button/add-to-cart-button.component';
+import { ShowMyCartComponent } from './components/show-my-cart/show-my-cart.component';
+import { AllPackagesComponent } from './pages/all-packages/all-packages.component';
+import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +32,11 @@ import { TravelServiceService } from './service/travel-service.service';
     RegisterComponent,
     PackageComponent,
     AdminloginComponent,
+    PackageCardComponent,
+    AddToCartButtonComponent,
+    ShowMyCartComponent,
+    AllPackagesComponent,
+    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +44,7 @@ import { TravelServiceService } from './service/travel-service.service';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    AdminModule
+    AdminModule,
   ],
   providers: [AuthGuard, TravelServiceService],
   bootstrap: [AppComponent],

@@ -16,20 +16,25 @@ export class LoginComponent implements OnInit {
   userPassword: String = '';
   loginType: boolean = false;
 
-  constructor(private tservice: TravelServiceService,
-              private authService: AuthService) {}
+  constructor(
+    private tservice: TravelServiceService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {}
-  addUsers(): void {} // for registering new users
-
   submitUser(): void {
     this.loginType = false;
     this.tservice.getUserLoginInput().subscribe((data) => {
       this.userLogins = data;
     });
-    if (this.authService.loginAuthenticated(this.userLogins.username,
-      this.userUsername, this.userLogins.password, this.userPassword))
-    {
+    if (
+      this.authService.loginAuthenticated(
+        this.userLogins.username,
+        this.userUsername,
+        this.userLogins.password,
+        this.userPassword
+      )
+    ) {
       this.tservice.postUserLoginInput(this.userUsername, this.userPassword);
     } else {
       this.loginType = true;
