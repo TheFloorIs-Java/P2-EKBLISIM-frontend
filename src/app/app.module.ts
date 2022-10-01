@@ -16,6 +16,7 @@ import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
 import { AdminModule } from './admin/admin.module';
 import { AuthGuard } from './auth/auth.guard';
 import { TravelServiceService } from './service/travel-service.service';
+import { RegisterSuccessComponent } from './register/register-success/register-success.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TravelServiceService } from './service/travel-service.service';
     RegisterComponent,
     PackageComponent,
     AdminloginComponent,
+    RegisterSuccessComponent,
   ],
   imports: [
     BrowserModule,

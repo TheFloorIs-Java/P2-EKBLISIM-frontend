@@ -8,6 +8,8 @@ import { PackageComponent } from './components/package/package.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AdminComponent } from './admin/admin/admin.component';
 import { AdminGuard } from './admin/admin.guard';
+import { RegisterSuccessComponent } from './pages/register/register-success/register-success.component';
+import { AddsuccessGuard } from './pages/register/register-success/addsuccess.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +17,8 @@ const routes: Routes = [
   { path: 'adminlogin', component: AdminloginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'packages', component: PackageComponent, canActivate: [AuthGuard] },
-  { path: 'adminportal', component: AdminComponent, canActivate: [AdminGuard]}
+  { path: 'adminportal', component: AdminComponent, canActivate: [AdminGuard]},
+  { path: 'regsuccess', component: RegisterSuccessComponent, canActivate: [AddsuccessGuard]}
 ];
 
 @NgModule({
