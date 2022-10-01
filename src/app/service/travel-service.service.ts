@@ -21,9 +21,14 @@ export class TravelServiceService {
       })
       .subscribe((data) => console.log(data));
   }
-  getUserLoginInput(): Observable<Account> {
-    return this.http.get<Account>(
+  getUserLoginInput(): Observable<Array<Account>> {
+    return this.http.get<Array<Account>>(
       'https://632d094f519d17fb53b70ec4.mockapi.io/UserLogin/v1/logins'
+    );
+  }
+  getAUser(userName: String, password: String): Observable<Account> {
+    return this.http.get<Account>(
+      `https://632d094f519d17fb53b70ec4.mockapi.io/UserLogin/v1/logins?username=${userName}&password=${password}`
     );
   }
   postUserLoginInput(usernameInput: String, passwordInput: String): void {
