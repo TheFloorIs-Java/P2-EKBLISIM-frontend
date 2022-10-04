@@ -11,10 +11,10 @@ export class PackageCardComponent implements OnInit {
   @Input()
   cart: Packages = {
     packageType: '',
-    month: '',
+    monthOffering: '',
     usState: '',
     packageDetails: '',
-    packagePrice: 0.0,
+    price: 0.0,
   };
   constructor(private tservice: TravelServiceService) {}
 

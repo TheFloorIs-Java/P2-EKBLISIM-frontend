@@ -39,13 +39,14 @@ export class TravelServiceService {
       )
       .subscribe((data) => console.log(data));
   }
-  getAllTravelPackages(): Observable<Packages[]> {
-    return this.http.get<Packages[]>('http://localhost:8080/packages');
+  getAllTravelPackages(): Observable<Array<Packages>> {
+    return this.http.get<Array<Packages>>('http://localhost:8080/packages');
   }
   addToShoppingCart(added: Packages) {
     this.addToCart.push(added);
     console.log(this.addToCart);
   }
+  // getTotalPrice():
   postUserPayment(
     cardNumberInput: number,
     securityCodeInput: number,
