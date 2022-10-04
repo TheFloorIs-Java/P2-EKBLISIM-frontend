@@ -1,7 +1,7 @@
-export interface Package {
+export interface Packages {
   packageType: String;
   month: String;
   usState: String;
   packageDetails: String;
-  packagePrice: Number;
+  packagePrice: number;
 }

@@ -2,11 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Account } from '../model/Account';
+import { Packages } from '../model/Packages';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TravelServiceService {
+  addToCart: Array<Packages> = [];
   constructor(private http: HttpClient) {}
   getAdminLoginInput(): Observable<Account> {
     return this.http.get<Account>(
@@ -40,6 +42,26 @@ export class TravelServiceService {
           password: passwordInput,
         }
       )
+      .subscribe((data) => console.log(data));
+  }
+  getAllTravelPackages(): Observable<Packages[]> {
+    return this.http.get<Packages[]>('http://localhost:8080/packages');
+  }
+  addToShoppingCart(added: Packages) {
+    this.addToCart.push(added);
+    console.log(this.addToCart);
+  }
+  postUserPayment(
+    cardNumberInput: number,
+    securityCodeInput: number,
+    expiryDateInput: any
+  ): void {
+    this.http
+      .post<any>('http://localhost:8080/payments', {
+        cardNumber: cardNumberInput,
+        securityCode: securityCodeInput,
+        expiryDate: expiryDateInput,
+      })
       .subscribe((data) => console.log(data));
   }
 }

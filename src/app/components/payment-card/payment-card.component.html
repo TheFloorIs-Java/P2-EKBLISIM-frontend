@@ -1,0 +1,15 @@
+<div>
+  <label for="cardNumber">Card Number:</label>
+  <input id="" type="text" [(ngModel)]="cardNumber" />
+</div>
+<div>
+  <label for="securityCode">Security Code:</label>
+  <input id="" type="text" [(ngModel)]="securityCode" />
+</div>
+<div>
+  <label for="expiryDate">Expiration Date:</label>
+  <input id="" type="text" [(ngModel)]="expiryDate" />
+</div>
+<button (click)="submitPayment()" routerLink="/success_message_page">
+  Submit Payment
+</button>

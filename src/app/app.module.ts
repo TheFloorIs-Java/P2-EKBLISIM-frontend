@@ -16,7 +16,12 @@ import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
 import { AdminModule } from './admin/admin.module';
 import { AuthGuard } from './auth/auth.guard';
 import { TravelServiceService } from './service/travel-service.service';
-import { RegisterSuccessComponent } from './pages/register/register-success/register-success.component';
+import { PackageCardComponent } from './components/package-card/package-card.component';
+import { AddToCartButtonComponent } from './components/add-to-cart-button/add-to-cart-button.component';
+import { ShowMyCartComponent } from './components/show-my-cart/show-my-cart.component';
+import { AllPackagesComponent } from './pages/all-packages/all-packages.component';
+import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
+import { PaymentCardComponent } from './components/payment-card/payment-card.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,12 @@ import { RegisterSuccessComponent } from './pages/register/register-success/regi
     RegisterComponent,
     PackageComponent,
     AdminloginComponent,
-    RegisterSuccessComponent,
+    PackageCardComponent,
+    AddToCartButtonComponent,
+    ShowMyCartComponent,
+    AllPackagesComponent,
+    ShoppingCartComponent,
+    PaymentCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +46,7 @@ import { RegisterSuccessComponent } from './pages/register/register-success/regi
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    AdminModule
+    AdminModule,
   ],
   providers: [AuthGuard, TravelServiceService],
   bootstrap: [AppComponent],

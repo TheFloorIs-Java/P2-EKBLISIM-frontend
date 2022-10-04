@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Packages } from 'src/app/model/Packages';
+import { TravelServiceService } from 'src/app/service/travel-service.service';
 
 @Component({
   selector: 'app-package',
@@ -6,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./package.component.css'],
 })
 export class PackageComponent implements OnInit {
-  constructor() {}
+  packages: Array<Packages> = [];
+  constructor(private tservice: TravelServiceService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.tservice.getAllTravelPackages().subscribe((data) => {
+      this.packages = data;
+      console.log(data);
+    });
+  }
 }

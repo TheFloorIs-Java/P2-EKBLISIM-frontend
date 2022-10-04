@@ -1,1 +1,3 @@
-<p>This works!</p>
+<div *ngFor="let tPackage of packages">
+  <app-package-card [cart]="tPackage"></app-package-card>
+</div>
