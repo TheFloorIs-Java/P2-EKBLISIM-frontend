@@ -14,7 +14,7 @@ export class PackageCardComponent implements OnInit {
     month: '',
     usState: '',
     packageDetails: '',
-    packagePrice: 0,
+    packagePrice: 0.0,
   };
   constructor(private tservice: TravelServiceService) {}
 

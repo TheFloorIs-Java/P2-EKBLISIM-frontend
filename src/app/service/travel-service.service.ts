@@ -46,4 +46,17 @@ export class TravelServiceService {
     this.addToCart.push(added);
     console.log(this.addToCart);
   }
+  postUserPayment(
+    cardNumberInput: number,
+    securityCodeInput: number,
+    expiryDateInput: any
+  ): void {
+    this.http
+      .post<any>('http://localhost:8080/payments', {
+        cardNumber: cardNumberInput,
+        securityCode: securityCodeInput,
+        expiryDate: expiryDateInput,
+      })
+      .subscribe((data) => console.log(data));
+  }
 }

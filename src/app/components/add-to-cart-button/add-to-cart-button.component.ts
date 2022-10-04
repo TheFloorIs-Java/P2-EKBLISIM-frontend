@@ -6,12 +6,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./add-to-cart-button.component.css'],
 })
 export class AddToCartButtonComponent implements OnInit {
-  constructor() {}
+  toCart: boolean = false;
   @Output()
   buttonClicked: EventEmitter<any> = new EventEmitter<any>(); // custom event firing
 
   ngOnInit(): void {}
   processButtonClick() {
     this.buttonClicked.emit();
+    this.toCart = !this.toCart;
   }
 }

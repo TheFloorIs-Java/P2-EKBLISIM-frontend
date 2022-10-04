@@ -1,3 +1,8 @@
 <div *ngFor="let package of getPackagesFromService()">
-  <span>{{ package.packageType }}</span>
+  <p>{{ package.packageType }}</p>
+  <p>{{ package.month }}</p>
+  <p>{{ package.usState }}</p>
+  <p>{{ package.packagePrice }}</p>
+  <hr />
 </div>
+<!-- <button routerLink="/payments">Go To Payment</button> -->

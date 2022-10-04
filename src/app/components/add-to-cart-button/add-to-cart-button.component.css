@@ -1,0 +1,22 @@
+.optionsOne {
+  background: #43cbff;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  line-height: 15px;
+  margin: 15px auto;
+  border: 1px solid rgb(83, 50, 55);
+  border-radius: 75px;
+  padding: 5px 15px;
+  opacity: 0.8;
+}
+.optionsOne:hover {
+  background: #ca58f3;
+  color: #fffacd;
+  cursor: pointer;
+  font-size: 22px;
+}
+.cart {
+  color: rgb(204, 14, 14);
+  text-decoration: solid;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}

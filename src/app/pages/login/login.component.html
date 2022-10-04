@@ -1,10 +1,20 @@
 <div>
   <label for="username">Username:</label>
-  <input id="username" type="text" [(ngModel)]="userUsername" />
+  <input
+    id="username"
+    type="text"
+    [(ngModel)]="userUsername"
+    required="required"
+  />
 </div>
 <div>
   <label for="logPassword">Password:</label>
-  <input id="logPassword" type="password" [(ngModel)]="userPassword" />
+  <input
+    id="logPassword"
+    type="password"
+    [(ngModel)]="userPassword"
+    required="required"
+  />
 </div>
 <button (click)="submitUser()" routerLink="/packages">Submit</button>
 <p *ngIf="loginType">Wrong username or password! Try Again.</p>

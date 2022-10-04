@@ -21,6 +21,7 @@ import { AddToCartButtonComponent } from './components/add-to-cart-button/add-to
 import { ShowMyCartComponent } from './components/show-my-cart/show-my-cart.component';
 import { AllPackagesComponent } from './pages/all-packages/all-packages.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
+import { PaymentCardComponent } from './components/payment-card/payment-card.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.compo
     ShowMyCartComponent,
     AllPackagesComponent,
     ShoppingCartComponent,
+    PaymentCardComponent,
   ],
   imports: [
     BrowserModule,
