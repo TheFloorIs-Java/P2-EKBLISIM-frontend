@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'adminlogin', component: AdminloginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'packages', component: AllPackagesComponent, canActivate: [AuthGuard] },
+  // { path: 'packages', component: AllPackagesComponent, canActivate: [AuthGuard] },
   { path: 'cart', component: ShoppingCartComponent },
   // { path: 'packages', component: PackageComponent },
   // {

@@ -9,9 +9,16 @@ export class NavbarComponent implements OnInit {
   collapse: boolean = false;
   loggedIn: boolean = false;
 
+  user: string | null = "";
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (localStorage.getItem('signedIn')) {
+      this.user = localStorage.getItem('token');
+      this.loggedIn = true;
+    }
+  }
   collapseOnClick(): void {
     this.collapse = !this.collapse;
   }
