@@ -9,6 +9,7 @@ import { Packages } from '../model/Packages';
 })
 export class TravelServiceService {
   addToCart: Array<Packages> = [];
+  loggedInUser?: Account;
   constructor(private http: HttpClient) {}
   getAdminLoginInput(): Observable<Account> {
     return this.http.get<Account>(

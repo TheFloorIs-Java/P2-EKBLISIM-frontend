@@ -22,6 +22,8 @@ import { ShowMyCartComponent } from './components/show-my-cart/show-my-cart.comp
 import { AllPackagesComponent } from './pages/all-packages/all-packages.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { PaymentCardComponent } from './components/payment-card/payment-card.component';
+import { RegsuccessComponent } from './pages/register/regsuccess/regsuccess.component';
+import { AddsuccessGuard } from './pages/register/addsuccess.guard';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { PaymentCardComponent } from './components/payment-card/payment-card.com
     AllPackagesComponent,
     ShoppingCartComponent,
     PaymentCardComponent,
+    RegsuccessComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,7 @@ import { PaymentCardComponent } from './components/payment-card/payment-card.com
     HttpClientModule,
     AdminModule,
   ],
-  providers: [AuthGuard, TravelServiceService],
+  providers: [AuthGuard, TravelServiceService, AddsuccessGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
