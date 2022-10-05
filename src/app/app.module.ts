@@ -26,6 +26,7 @@ import { RegsuccessComponent } from './pages/register/regsuccess/regsuccess.comp
 import { AddsuccessGuard } from './pages/register/addsuccess.guard';
 
 import { ReactLoginModule } from './react-login/react-login.module';
+import { PaymentPageComponent } from './pages/payment-page/payment-page.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { ReactLoginModule } from './react-login/react-login.module';
     ShoppingCartComponent,
     PaymentCardComponent,
     RegsuccessComponent,
+    PaymentPageComponent,
   ],
   imports: [
     BrowserModule,

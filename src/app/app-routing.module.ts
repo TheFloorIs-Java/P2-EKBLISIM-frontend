@@ -15,6 +15,7 @@ import { AdminComponent } from './admin/admin/admin.component';
 import { AdminGuard } from './admin/admin.guard';
 import { RegsuccessComponent } from './pages/register/regsuccess/regsuccess.component';
 import { AddsuccessGuard } from './pages/register/addsuccess.guard';
+import { PaymentPageComponent } from './pages/payment-page/payment-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: 'packages', component: AddToCartButtonComponent },
   { path: 'packages', component: ShowMyCartComponent },
   { path: 'adminportal', component: AdminComponent, canActivate: [AdminGuard] },
-  { path: 'regsuccess', component: RegsuccessComponent, canActivate: [AddsuccessGuard]}
+  { path: 'regsuccess', component: RegsuccessComponent, canActivate: [AddsuccessGuard]},
+  { path: 'payments', component: PaymentPageComponent}
 ];
 // canActivate: [AuthGuard]
 @NgModule({

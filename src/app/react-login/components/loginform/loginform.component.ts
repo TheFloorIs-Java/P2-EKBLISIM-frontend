@@ -58,6 +58,10 @@ export class LoginformComponent implements OnInit {
         console.log("Successful login");
         localStorage.setItem('signedIn', 'true');
         localStorage.setItem('token', this.controls['username'].value)
+        // localStorage.setItem('userSession', JSON.stringify({ // This would be the existing user's data gotten from the API
+        //   username: this.controls['username'],
+        //   userPassword: this.controls['userPassword']
+        // }));
         console.log(this.form.getRawValue());
         this.router.navigate(['/packages']); // After user is verified to exist in database.
       }
