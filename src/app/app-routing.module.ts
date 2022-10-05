@@ -13,13 +13,16 @@ import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.compo
 import { AuthGuard } from './auth/auth.guard';
 import { AdminComponent } from './admin/admin/admin.component';
 import { AdminGuard } from './admin/admin.guard';
+import { RegsuccessComponent } from './pages/register/regsuccess/regsuccess.component';
+import { AddsuccessGuard } from './pages/register/addsuccess.guard';
+import { PaymentPageComponent } from './pages/payment-page/payment-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'adminlogin', component: AdminloginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'packages', component: AllPackagesComponent },
+  // { path: 'packages', component: AllPackagesComponent, canActivate: [AuthGuard] },
   { path: 'cart', component: ShoppingCartComponent },
   // { path: 'packages', component: PackageComponent },
   // {
@@ -29,6 +32,8 @@ const routes: Routes = [
   { path: 'packages', component: AddToCartButtonComponent },
   { path: 'packages', component: ShowMyCartComponent },
   { path: 'adminportal', component: AdminComponent, canActivate: [AdminGuard] },
+  { path: 'regsuccess', component: RegsuccessComponent, canActivate: [AddsuccessGuard]},
+  { path: 'payments', component: PaymentPageComponent}
 ];
 // canActivate: [AuthGuard]
 @NgModule({

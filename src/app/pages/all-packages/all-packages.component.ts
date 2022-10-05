@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AllPackagesComponent implements OnInit {
 
   constructor() { }
+  user: string | null = "";
 
   ngOnInit(): void {
   }

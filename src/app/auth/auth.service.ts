@@ -24,4 +24,9 @@ export class AuthService {
   getIsVerified(): boolean {
     return this.isVerified;
   }
+
+  // Use to bypass the guard in certain situations.
+  setIsVerified(): void {
+    this.isVerified = true;
+  }
 }

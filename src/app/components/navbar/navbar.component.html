@@ -25,4 +25,5 @@
       <a routerLink="cart" class="navbar-brand">My Shopping Cart</a>
     </li>
   </ul>
+  <span *ngIf="loggedIn" class="navbar-text">Hello, {{user}}!</span>
 </nav>

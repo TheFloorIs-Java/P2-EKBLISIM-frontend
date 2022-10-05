@@ -9,6 +9,7 @@ import { Packages } from '../model/Packages';
 })
 export class TravelServiceService {
   addToCart: Array<Packages> = [];
+  loggedInUser?: Account;
   constructor(private http: HttpClient) {}
   getAdminLoginInput(): Observable<Account> {
     return this.http.get<Account>('');
@@ -24,6 +25,8 @@ export class TravelServiceService {
   getUserLoginInput(): Observable<Account> {
     return this.http.get<Account>('http://localhost:8080/logins');
   }
+
+  // Possibly also await the result when posted to backend. (Use another endpoint)
   postUserLoginInput(usernameInput: String, passwordInput: String): void {
     this.http
       .post<String>('http://localhost:8080/users/{username}', {
@@ -71,5 +74,8 @@ export class TravelServiceService {
         expiryDate: expiryDateInput,
       })
       .subscribe((data) => console.log(data));
+
   }
+
+  
 }
