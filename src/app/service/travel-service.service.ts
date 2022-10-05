@@ -29,6 +29,8 @@ export class TravelServiceService {
       'https://632d094f519d17fb53b70ec4.mockapi.io/UserLogin/v1/logins'
     );
   }
+
+  // Possibly also await the result when posted to backend. (Use another endpoint)
   postUserLoginInput(usernameInput: String, passwordInput: String): void {
     this.http
       .post<String>(
@@ -60,5 +62,8 @@ export class TravelServiceService {
         expiryDate: expiryDateInput,
       })
       .subscribe((data) => console.log(data));
+
   }
+
+  
 }

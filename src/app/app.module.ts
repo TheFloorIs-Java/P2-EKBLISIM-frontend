@@ -25,6 +25,8 @@ import { PaymentCardComponent } from './components/payment-card/payment-card.com
 import { RegsuccessComponent } from './pages/register/regsuccess/regsuccess.component';
 import { AddsuccessGuard } from './pages/register/addsuccess.guard';
 
+import { ReactLoginModule } from './react-login/react-login.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +52,7 @@ import { AddsuccessGuard } from './pages/register/addsuccess.guard';
     FormsModule,
     HttpClientModule,
     AdminModule,
+    ReactLoginModule,
   ],
   providers: [AuthGuard, TravelServiceService, AddsuccessGuard],
   bootstrap: [AppComponent],
