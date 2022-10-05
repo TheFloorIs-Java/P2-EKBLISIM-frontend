@@ -16,6 +16,9 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {}
   submitCredentials(): void {
-    this.tservice.postUserLoginInput(this.createUsername, this.createPassword);
+    this.tservice.postUserRegisterInput(
+      this.createUsername,
+      this.createPassword
+    );
   }
 }

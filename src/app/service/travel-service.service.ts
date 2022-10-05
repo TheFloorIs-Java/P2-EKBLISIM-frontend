@@ -11,32 +11,33 @@ export class TravelServiceService {
   addToCart: Array<Packages> = [];
   constructor(private http: HttpClient) {}
   getAdminLoginInput(): Observable<Account> {
-    return this.http.get<Account>(
-      'api endpoint for getting admin login credentials to compare'
-    );
+    return this.http.get<Account>('');
   }
   postAdminLoginInput(usernameInput: String, passwordInput: String): void {
     this.http
-      .post<String>('API endpoint for posting admin login credentials', {
+      .post<String>('', {
         username: usernameInput,
         password: passwordInput,
       })
       .subscribe((data) => console.log(data));
   }
   getUserLoginInput(): Observable<Account> {
-    return this.http.get<Account>(
-      'https://632d094f519d17fb53b70ec4.mockapi.io/UserLogin/v1/logins'
-    );
+    return this.http.get<Account>('http://localhost:8080/logins');
   }
   postUserLoginInput(usernameInput: String, passwordInput: String): void {
     this.http
-      .post<String>(
-        'https://632d094f519d17fb53b70ec4.mockapi.io/UserLogin/v1/logins',
-        {
-          username: usernameInput,
-          password: passwordInput,
-        }
-      )
+      .post<String>('http://localhost:8080/users/{username}', {
+        username: usernameInput,
+        password: passwordInput,
+      })
+      .subscribe((data) => console.log(data));
+  }
+  postUserRegisterInput(usernameInput: String, passwordInput: String): void {
+    this.http
+      .post<String>('http://localhost:8080/users', {
+        username: usernameInput,
+        password: passwordInput,
+      })
       .subscribe((data) => console.log(data));
   }
   getAllTravelPackages(): Observable<Array<Packages>> {
@@ -46,7 +47,18 @@ export class TravelServiceService {
     this.addToCart.push(added);
     console.log(this.addToCart);
   }
-  // getTotalPrice():
+  removeFromShoppingCart() {
+    this.addToCart.pop();
+  }
+
+  getTotalPrice(): number {
+    let sum: number = 0;
+    this.addToCart.forEach((packages) => {
+      sum += packages.price;
+    });
+    return sum;
+  }
+
   postUserPayment(
     cardNumberInput: number,
     securityCodeInput: number,

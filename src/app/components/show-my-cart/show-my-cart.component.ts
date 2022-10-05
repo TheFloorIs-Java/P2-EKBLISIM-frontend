@@ -12,11 +12,14 @@ export class ShowMyCartComponent implements OnInit {
   constructor(private tservice: TravelServiceService) {}
 
   ngOnInit(): void {}
-  changeDropdown(): void {
-    this.showCart = !this.showCart;
-  }
 
   getPackagesFromService(): Array<Packages> {
     return this.tservice.addToCart;
+  }
+  removePackagesFromService(): void {
+    this.tservice.removeFromShoppingCart();
+  }
+  getTotalPriceFromService(): number {
+    return this.tservice.getTotalPrice();
   }
 }
