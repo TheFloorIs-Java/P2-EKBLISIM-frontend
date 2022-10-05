@@ -8,11 +8,6 @@ import { Payment } from 'src/app/model/Payment';
   styleUrls: ['./payment-card.component.css'],
 })
 export class PaymentCardComponent implements OnInit {
-  // payments: Payment = {
-  //   cardNumber: 0,
-  //   securityCode: 0,
-  //   expiryDate: '',
-  // };
   @Input()
   cardNumber: any = '';
   @Input()

@@ -22,7 +22,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'adminlogin', component: AdminloginComponent },
   { path: 'register', component: RegisterComponent },
-  // { path: 'packages', component: AllPackagesComponent, canActivate: [AuthGuard] },
+  {
+    path: 'packages',
+    component: AllPackagesComponent,
+  },
   { path: 'cart', component: ShoppingCartComponent },
   // { path: 'packages', component: PackageComponent },
   // {
@@ -32,8 +35,12 @@ const routes: Routes = [
   { path: 'packages', component: AddToCartButtonComponent },
   { path: 'packages', component: ShowMyCartComponent },
   { path: 'adminportal', component: AdminComponent, canActivate: [AdminGuard] },
-  { path: 'regsuccess', component: RegsuccessComponent, canActivate: [AddsuccessGuard]},
-  { path: 'payments', component: PaymentPageComponent}
+  {
+    path: 'regsuccess',
+    component: RegsuccessComponent,
+    canActivate: [AddsuccessGuard],
+  },
+  { path: 'payments', component: PaymentPageComponent },
 ];
 // canActivate: [AuthGuard]
 @NgModule({
