@@ -18,10 +18,10 @@ import { AddsuccessGuard } from './pages/register/addsuccess.guard';
 import { PaymentPageComponent } from './pages/payment-page/payment-page.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
+  // { path: '', component: HomeComponent },
+  { path: 'login', redirectTo: '/' },
   { path: 'adminlogin', component: AdminloginComponent },
-  { path: 'register', component: RegisterComponent },
+  // { path: 'register', component: RegisterComponent },
   // { path: 'packages', component: AllPackagesComponent, canActivate: [AuthGuard] },
   { path: 'cart', component: ShoppingCartComponent },
   // { path: 'packages', component: PackageComponent },

@@ -1,6 +1,8 @@
-/* ul {
-    list-style-type: none;
+ul {
+    padding-left: 50px;
+
 }
+/*
 li {
     float: left;
     margin: 25px;

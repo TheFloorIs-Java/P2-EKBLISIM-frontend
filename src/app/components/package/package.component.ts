@@ -17,4 +17,18 @@ export class PackageComponent implements OnInit {
       console.log(data);
     });
   }
+
+  user: string | null = '';
+
+  getUser(): boolean {
+    console.log(localStorage.getItem('signedIn'));
+    
+    if (localStorage.getItem('signedIn'))
+    {
+      this.user = localStorage.getItem('token');
+      return true;
+    }
+      
+    return false;
+  }
 }

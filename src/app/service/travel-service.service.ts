@@ -10,6 +10,7 @@ import { Packages } from '../model/Packages';
 export class TravelServiceService {
   addToCart: Array<Packages> = [];
   loggedInUser?: Account;
+
   constructor(private http: HttpClient) {}
   getAdminLoginInput(): Observable<Account> {
     return this.http.get<Account>(
@@ -24,11 +25,17 @@ export class TravelServiceService {
       })
       .subscribe((data) => console.log(data));
   }
-  getUserLoginInput(): Observable<Account> {
-    return this.http.get<Account>(
+  getUserLoginInput(): Observable<Array<Account>> {
+    return this.http.get<Array<Account>>(
       'https://632d094f519d17fb53b70ec4.mockapi.io/UserLogin/v1/logins'
     );
   }
+
+  // getUserLoginInput(): void {
+  //   this.http.get<Account[]>(
+  //     'https://632d094f519d17fb53b70ec4.mockapi.io/UserLogin/v1/logins'
+  //   ).subscribe(data => { this.userAccounts = data; });
+  // }
 
   // Possibly also await the result when posted to backend. (Use another endpoint)
   postUserLoginInput(usernameInput: String, passwordInput: String): void {
