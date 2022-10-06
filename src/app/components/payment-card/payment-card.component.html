@@ -1,13 +1,14 @@
 <div>
   <label for="cardNumber">Card Number:</label>
-  <input id="" type="text" [(ngModel)]="cardNumber" />
+  <input id="" type="text" required="required" [(ngModel)]="cardNumber" />
 </div>
 <div>
   <label for="securityCode">Security Code:</label>
-  <input id="" type="text" [(ngModel)]="securityCode" />
+  <input id="" type="text" required="required" [(ngModel)]="securityCode" />
 </div>
 <div>
   <label for="expiryDate">Expiration Date:</label>
-  <input id="" type="text" [(ngModel)]="expiryDate" />
+  <input id="" type="text" required="required" [(ngModel)]="expiryDate" />
 </div>
-<button (click)="submitPayment()" routerLink="">Submit Payment</button>
+<div *ngIf="!isValid">Cannot be empty</div>
+<button (click)="submitPayment()">Submit Payment</button>

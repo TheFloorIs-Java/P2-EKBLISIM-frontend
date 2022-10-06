@@ -16,14 +16,23 @@ import { AdminGuard } from './admin/admin.guard';
 import { RegsuccessComponent } from './pages/register/regsuccess/regsuccess.component';
 import { AddsuccessGuard } from './pages/register/addsuccess.guard';
 import { PaymentPageComponent } from './pages/payment-page/payment-page.component';
+import { LoginAuthGuard } from './react-login/services/login-auth.guard';
 
 const routes: Routes = [
-  // { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'login', redirectTo: '/' },
   { path: 'adminlogin', component: AdminloginComponent },
   // { path: 'register', component: RegisterComponent },
-  // { path: 'packages', component: AllPackagesComponent, canActivate: [AuthGuard] },
-  { path: 'cart', component: ShoppingCartComponent },
+  {
+    path: 'packages',
+    component: AllPackagesComponent,
+    canActivate: [LoginAuthGuard],
+  },
+  {
+    path: 'cart',
+    component: ShoppingCartComponent,
+    canActivate: [LoginAuthGuard],
+  },
   // { path: 'packages', component: PackageComponent },
   // {
   //   path: 'packages',

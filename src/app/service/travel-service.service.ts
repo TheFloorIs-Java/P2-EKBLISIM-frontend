@@ -38,18 +38,24 @@ export class TravelServiceService {
   // Possibly also await the result when posted to backend. (Use another endpoint)
   postUserLoginInput(usernameInput: String, passwordInput: String): void {
     this.http
-      .post<String>('http://localhost:8080/users/{username}', {
-        username: usernameInput,
-        password: passwordInput,
-      })
+      .post<String>(
+        'https://632d094f519d17fb53b70ec4.mockapi.io/UserLogin/v1/logins',
+        {
+          username: usernameInput,
+          password: passwordInput,
+        }
+      )
       .subscribe((data) => console.log(data));
   }
   postUserRegisterInput(usernameInput: String, passwordInput: String): void {
     this.http
-      .post<String>('http://localhost:8080/users', {
-        username: usernameInput,
-        password: passwordInput,
-      })
+      .post<String>(
+        'https://632d094f519d17fb53b70ec4.mockapi.io/UserLogin/v1/logins',
+        {
+          username: usernameInput,
+          password: passwordInput,
+        }
+      )
       .subscribe((data) => console.log(data));
   }
   getAllTravelPackages(): Observable<Array<Packages>> {
@@ -68,7 +74,7 @@ export class TravelServiceService {
     this.addToCart.forEach((packages) => {
       sum += packages.price;
     });
-    return sum;
+    return Math.round(sum * 100) / 100;
   }
 
   postUserPayment(
@@ -83,8 +89,5 @@ export class TravelServiceService {
         expiryDate: expiryDateInput,
       })
       .subscribe((data) => console.log(data));
-
   }
-
-  
 }

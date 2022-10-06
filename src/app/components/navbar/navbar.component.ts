@@ -9,7 +9,7 @@ export class NavbarComponent implements OnInit {
   collapse: boolean = false;
 
   isLoggedIn: boolean = this.userLoggedIn();
-  user: string | null = "";
+  user: string | null = '';
 
   constructor() {}
 
@@ -28,9 +28,12 @@ export class NavbarComponent implements OnInit {
     if (sessionStorage.getItem('signedIn') === 'true') {
       this.user = sessionStorage.getItem('token');
       // this.isLoggedIn = true;
-      return true
+      return true;
     }
     return false;
+  }
+  onClickLogOut(): void {
+    sessionStorage.clear();
   }
 
   collapseOnClick(): void {

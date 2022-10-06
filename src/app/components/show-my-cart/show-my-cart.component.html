@@ -2,7 +2,7 @@
   <p>Package Type: {{ package.packageType }}</p>
   <p>Month: {{ package.monthOffering }}</p>
   <p>US state: {{ package.usState }}</p>
-  <p>Details: {{ package.packageDetails }}</p>
+  <p>Details: {{ package.details }}</p>
   <p>Price: {{ package.price }}</p>
   <div>
     <button class="optionsOne" (click)="removePackagesFromService()">
@@ -12,7 +12,7 @@
   <hr />
 </div>
 <div>
-  <p>Total Price: {{ getTotalPriceFromService() }}</p>
+  <p>Total Price: ${{ getTotalPriceFromService() }}</p>
 </div>
 
 <button routerLink="/payments">Go To Payment</button>
