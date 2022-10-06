@@ -24,9 +24,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
   submitUser(): void {
     this.loginType = false;
-    this.tservice.getUserLoginInput().subscribe((data) => {
-      this.userLogins = data;
-    });
+    // this.tservice.getUserLoginInput().subscribe((data) => {
+    //   // this.userLogins = data;
+    // });
     if (
       this.authService.loginAuthenticated(
         this.userLogins.username,

@@ -12,11 +12,11 @@ export class LoginAuthService {
 
   isVerified: boolean = false;
 
-  getUserLoginInput(): Observable<Account> {
-    return this.http.get<Account>(
-      'https://632d094f519d17fb53b70ec4.mockapi.io/UserLogin/v1/logins'
-    );
-  }
+  // getUserLoginInput(): Observable<Account> {
+  //   return this.http.get<Account>(
+  //     'https://632d094f519d17fb53b70ec4.mockapi.io/UserLogin/v1/logins'
+  //   );
+  // }
 
   loginAuthenticated(nameOnFile: String,
     nameEntered: String,
