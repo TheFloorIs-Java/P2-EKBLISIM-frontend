@@ -1,0 +1,11 @@
+<div>
+  <label for="username">Create New Username:</label>
+  <input id="username" type="text" [(ngModel)]="createUsername" />
+</div>
+<div>
+  <label for="logPassword">Create New Password:</label>
+  <input id="logPassword" type="password" [(ngModel)]="createPassword" />
+</div>
+<button (click)="submitCredentials()" routerLink="/regsuccess">Submit</button>
+
+

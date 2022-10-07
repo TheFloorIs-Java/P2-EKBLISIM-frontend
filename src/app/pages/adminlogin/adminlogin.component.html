@@ -1,0 +1,12 @@
+<h2>Admin Login Page</h2>
+<div>
+  <label for="username">Username:</label>
+  <input id="username" type="text" [(ngModel)]="adminUsername" />
+</div>
+<div>
+  <label for="logPassword">Password:</label>
+  <input id="logPassword" type="password" [(ngModel)]="adminPassword" />
+</div>
+<button (click)="submitAdmin()" routerLink="/adminportal">Submit</button>
+<p *ngIf="loginType">Wrong username or password! Try Again.</p>
+<!-- This links to the page where the admin updates or adds something to the package dashboard -->

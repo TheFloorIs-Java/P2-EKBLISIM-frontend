@@ -1,17 +1,56 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { AllPackagesComponent } from './pages/all-packages/all-packages.component';
+// import { PackageComponent } from './components/package/package.component';
+// import { PackageCardComponent } from './components/package-card/package-card.component';
+import { AddToCartButtonComponent } from './components/add-to-cart-button/add-to-cart-button.component';
+import { ShowMyCartComponent } from './components/show-my-cart/show-my-cart.component';
+import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
+import { AuthGuard } from './auth/auth.guard';
+import { AdminComponent } from './admin/admin/admin.component';
+import { AdminGuard } from './admin/admin.guard';
+import { RegsuccessComponent } from './pages/register/regsuccess/regsuccess.component';
+import { AddsuccessGuard } from './pages/register/addsuccess.guard';
+import { PaymentPageComponent } from './pages/payment-page/payment-page.component';
+import { LoginAuthGuard } from './react-login/services/login-auth.guard';
 
 const routes: Routes = [
-  {path: "", component: HomeComponent},
-  {path: "about", component: AboutComponent},
-  {path: "login", component: LoginComponent}
+  { path: 'home', component: HomeComponent },
+  { path: 'login', redirectTo: '/' },
+  { path: 'adminlogin', component: AdminloginComponent },
+  // { path: 'register', component: RegisterComponent },
+  {
+    path: 'packages',
+    component: AllPackagesComponent,
+    canActivate: [LoginAuthGuard],
+  },
+  {
+    path: 'cart',
+    component: ShoppingCartComponent,
+    canActivate: [LoginAuthGuard],
+  },
+  // { path: 'packages', component: PackageComponent },
+  // {
+  //   path: 'packages',
+  //   component: PackageCardComponent,
+  // },
+  { path: 'packages', component: AddToCartButtonComponent },
+  { path: 'packages', component: ShowMyCartComponent },
+  { path: 'adminportal', component: AdminComponent, canActivate: [AdminGuard] },
+  {
+    path: 'regsuccess',
+    component: RegsuccessComponent,
+    canActivate: [AddsuccessGuard],
+  },
+  { path: 'payments', component: PaymentPageComponent },
 ];
-
+// canActivate: [AuthGuard]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

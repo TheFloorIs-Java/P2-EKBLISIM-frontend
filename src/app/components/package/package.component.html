@@ -1,0 +1,4 @@
+<div *ngIf="getUser()">Welcome, {{user}}</div>
+<div *ngFor="let tPackage of packages">
+  <app-package-card [cart]="tPackage"></app-package-card>
+</div>

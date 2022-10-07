@@ -1,0 +1,18 @@
+<div *ngFor="let package of getPackagesFromService()">
+  <p>Package Type: {{ package.packageType }}</p>
+  <p>Month: {{ package.monthOffering }}</p>
+  <p>US state: {{ package.usState }}</p>
+  <p>Details: {{ package.details }}</p>
+  <p>Price: {{ package.price }}</p>
+  <div>
+    <button class="optionsOne" (click)="removePackagesFromService()">
+      Remove
+    </button>
+  </div>
+  <hr />
+</div>
+<div>
+  <p>Total Price: ${{ getTotalPriceFromService() }}</p>
+</div>
+
+<button routerLink="/payments">Go To Payment</button>

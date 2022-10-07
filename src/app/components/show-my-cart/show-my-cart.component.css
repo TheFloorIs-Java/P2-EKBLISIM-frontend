@@ -1,0 +1,17 @@
+.optionsOne {
+  background: #266680;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  line-height: 15px;
+  margin: 15px auto;
+  border: 1px solid rgb(83, 50, 55);
+  border-radius: 75px;
+  padding: 5px 15px;
+  opacity: 0.8;
+}
+.optionsOne:hover {
+  background: #74328b;
+  color: #fffacd;
+  cursor: pointer;
+  font-size: 22px;
+}

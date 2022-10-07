@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Project 2 App of Something Undoubtedly Wonderful';
+export class AppComponent implements OnInit {
+  title: string = 'The Travel Agency';
+  
+
+  
+
+  ngOnInit() {
+    // localStorage.setItem('signedIn', 'false');
+    // localStorage.removeItem('token');
+  }
 }
