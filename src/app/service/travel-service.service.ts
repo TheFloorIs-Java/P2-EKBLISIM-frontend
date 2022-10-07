@@ -30,12 +30,6 @@ export class TravelServiceService {
     );
   }
 
-  // getUserLoginInput(): void {
-  //   this.http.get<Account[]>(
-  //     'https://632d094f519d17fb53b70ec4.mockapi.io/UserLogin/v1/logins'
-  //   ).subscribe(data => { this.userAccounts = data; });
-  // }
-
   // Possibly also await the result when posted to backend. (Use another endpoint)
   postUserLoginInput(usernameInput: String, passwordInput: String): void {
     this.http
