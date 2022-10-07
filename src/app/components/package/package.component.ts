@@ -21,11 +21,11 @@ export class PackageComponent implements OnInit {
   user: string | null = '';
 
   getUser(): boolean {
-    console.log(localStorage.getItem('signedIn'));
+    console.log(sessionStorage.getItem('signedIn'));
     
-    if (localStorage.getItem('signedIn'))
+    if (sessionStorage.getItem('signedIn'))
     {
-      this.user = localStorage.getItem('token');
+      this.user = sessionStorage.getItem('token');
       return true;
     }
       

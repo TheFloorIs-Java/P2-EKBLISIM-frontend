@@ -26,6 +26,7 @@ import { RegsuccessComponent } from './pages/register/regsuccess/regsuccess.comp
 import { AddsuccessGuard } from './pages/register/addsuccess.guard';
 
 import { ReactLoginModule } from './react-login/react-login.module';
+import { ReactiveFormsModule } from '@angular/forms';
 import { PaymentPageComponent } from './pages/payment-page/payment-page.component';
 
 @NgModule({
@@ -55,6 +56,7 @@ import { PaymentPageComponent } from './pages/payment-page/payment-page.componen
     HttpClientModule,
     AdminModule,
     ReactLoginModule,
+    ReactiveFormsModule
   ],
   providers: [AuthGuard, TravelServiceService, AddsuccessGuard],
   bootstrap: [AppComponent],

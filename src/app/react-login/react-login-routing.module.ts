@@ -7,7 +7,7 @@ import { LoginAuthGuard } from './services/login-auth.guard';
 
 const routes: Routes = [
   { path: '', component: LoginformComponent },
-  { path: 'packages', component: AllPackagesComponent, canActivate: [LoginAuthGuard]},
+  // { path: 'packages', component: AllPackagesComponent, canActivate: [LoginAuthGuard]}, // This
   { path: 'register', component: RegisterFormComponent}
 ];
 

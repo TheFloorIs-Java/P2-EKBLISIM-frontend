@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <label for="cardNumber">Card Number:</label>
   <input id="" type="text" required="required" [(ngModel)]="cardNumber" />
 </div>
@@ -11,4 +11,45 @@
   <input id="" type="text" required="required" [(ngModel)]="expiryDate" />
 </div>
 <div *ngIf="!isValid">Cannot be empty</div>
-<button (click)="submitPayment()">Submit Payment</button>
+<button (click)="submitPayment()">Submit Payment</button> -->
+
+
+<div class="container">
+  <h1>Sign in</h1>
+  <!-- <div class="noUserAlert" *ngIf="" -->
+  <form [formGroup]="form" (ngSubmit)="submitPayment()">
+      <div class="col-md-6 col-md-offset-3 loginBox">
+          <div class="form-group clearfix">
+              <label class="col-md-3 col-sm-5 col-xs-12" for="cardNumber">Card Number:</label>
+              <input class="form-control"
+              id="cardNumber"
+              type="text"
+              [formControlName]="'cardNumber'"
+              required="required"
+              />
+              <!-- <div class="validateAlert" *ngIf="form.get('username')?.dirty && form.get('username')?.hasError('required')">*Username is required</div> -->
+          </div>
+          <div class="form-group clearfix">
+              <label class="col-md-3 col-sm-5 col-xs-12" for="securityCode">Security Code:</label>
+              <input class="form-control"
+              id="securityCode"
+              type="text"
+              [formControlName]="'securityCode'"
+              required="required"
+              />
+          </div>
+          <div class="form-group clearfix">
+            <label class="col-md-3 col-sm-5 col-xs-12" for="expiryDate">Expiration Date:</label>
+            <input class="form-control"
+            id="expiryDate"
+            type="date"
+            [formControlName]="'expiryDate'"
+            required="required"
+            />
+        </div>
+          <button class="btn btn-success" [disabled]="!form.valid" type="submit">Submit Payment</button>
+      </div>
+  </form>
+</div>
+<!-- <p *ngIf="loginType">Wrong username or password! Try Again.</p> -->
+<!-- This links to the page where the user views the package dashboard and adds to his cart -->

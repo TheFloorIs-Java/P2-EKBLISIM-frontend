@@ -7,12 +7,14 @@ import { LoginformComponent } from './components/loginform/loginform.component';
 import { LoginAuthService } from './services/login-auth.service';
 import { LoginAuthGuard } from './services/login-auth.guard';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
+// import { AllPackagesComponent } from '../pages/all-packages/all-packages.component';
 
 
 @NgModule({
   declarations: [
     LoginformComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    // AllPackagesComponent
   ],
   imports: [
     ReactiveFormsModule,

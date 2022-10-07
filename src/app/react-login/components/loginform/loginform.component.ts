@@ -37,22 +37,6 @@ export class LoginformComponent implements OnInit {
 
   get controls() { return this.form.controls; }
 
-  // submitForm(): void {
-  //   let accounts = this.tservice.getUserLoginInput();
-  //   if (this.form.valid) {
-  //     if (this.authService.loginAuthenticated("user", this.controls['username'].value, "password", this.controls['userPassword'].value))
-  //     {
-  //       console.log("Successful login");
-  //       sessionStorage.setItem('signedIn', 'true');
-  //       sessionStorage.setItem('token', this.controls['username'].value);
-  //       // console.log(this.form.getRawValue());
-  //       this.router.navigate(['/packages']); // After user is verified to exist in database.
-  //     }
-  //   }
-  //   else {
-  //     console.log('User not verified!');
-  //   }
-  // }
 
   submitForm(): void {
     if (this.form.valid) {
@@ -67,7 +51,7 @@ export class LoginformComponent implements OnInit {
         console.log("Successful user login");
         sessionStorage.setItem('signedIn', 'true');
         sessionStorage.setItem('token', this.controls['username'].value);
-        this.tservice.postUserLoginInput(this.controls['username'].value, this.controls['userPassword'].value);
+        // this.tservice.postUserLoginInput(this.controls['username'].value, this.controls['userPassword'].value);
         // console.log(this.form.getRawValue());
         this.router.navigate(['/packages']); // After user is verified to exist in database.
       } else {
